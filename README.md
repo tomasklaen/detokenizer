@@ -2,7 +2,15 @@
 
 Replace tokens in a string based on token value map.
 
-**Examples**
+Supports dynamic tokens (regular expressions), and sync & async replacer functions.
+
+## Install
+
+```
+npm install detokenizer
+```
+
+### Examples
 
 Basic:
 
