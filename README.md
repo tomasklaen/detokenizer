@@ -9,7 +9,7 @@ Basic:
 ```ts
 const {detokenize} = require('detokenizer');
 
-detokenize('Hello {name}!', {'{name}': 'John');
+detokenize('Hello {name}!', {'{name}': 'John'});
 // => 'Hello John!'
 ```
 
@@ -24,7 +24,7 @@ detokenize('Hello {name}! Your email is {emoji:envelope} {email}.', [
 // => 'Hello John! Your email is ✉️ john@example.com.'
 ```
 
-Async support:
+Async:
 
 ```ts
 const {detokenizeAsync} = require('detokenizer');
@@ -42,9 +42,9 @@ await detokenizeAsync('Issue #42', [
 // => 'Issue <a href="..." title="Issue title">#42</a>'
 ```
 
-Token escaping support:
+Token escaping:
 
-*Add escape sequences to be replaced out as last tokens. (use dynamic tokens for more advanced replacing)*
+*Add escape sequences to be replaced out as last tokens. (use dynamic tokens (regular expressions) for more advanced replacing)*
 
 ```ts
 detokenize('\{foo\} value is {foo}', {
@@ -80,7 +80,7 @@ detokenize('...', {
 });
 ```
 
-Or if you want the dynamic tokens support, a an array of map like entries:
+Or if you want the dynamic tokens support, an array of map like entries:
 
 ```ts
 detokenize('...', [
