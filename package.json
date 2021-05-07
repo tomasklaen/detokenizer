@@ -19,7 +19,8 @@
 		"test": "jest",
 		"clean": "rm -rf dist",
 		"build": "npm run clean & tsc -p tsconfig.build.json",
-		"dev": "npm run clean & jest --watchAll"
+		"dev": "npm run clean & jest --watchAll",
+		"prepublish": "npm run build"
 	},
 	"devDependencies": {
 		"@types/jest": "^26.0.21",
