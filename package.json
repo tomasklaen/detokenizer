@@ -16,7 +16,8 @@
 	"main": "./dist/main.js",
 	"types": "./dist/main.d.ts",
 	"scripts": {
-		"test": "jest",
+		"format": "prettier --write \"src/**/*.ts\"",
+		"test": "prettier --check \"src/**/*.ts\" & jest",
 		"clean": "rm -rf dist",
 		"build": "npm run clean & tsc -p tsconfig.build.json",
 		"dev": "npm run clean & jest --watchAll",
@@ -26,6 +27,7 @@
 		"@types/jest": "^26.0.21",
 		"@types/node": "^15.0.1",
 		"jest": "^26.6.3",
+		"prettier": "^2.2.1",
 		"ts-jest": "^26.5.4",
 		"typescript": "^4.2.3"
 	}
