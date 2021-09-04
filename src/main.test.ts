@@ -38,6 +38,24 @@ describe('detokenize()', () => {
 	test('replacer functions receives match for dynamic tokens', () => {
 		expect(detokenize('a{a:foo}b', [[/{a:(?<id>\w+)}/, (_token, match) => match.groups?.id || '']])).toBe('afoob');
 	});
+
+	test('real world example', () => {
+		const staticValues: Record<string, string> = {
+			downloads: 'F:\\Downloads',
+			basename: 'image.jpg',
+		};
+		const result = detokenize('<downloads>/<basename>', [
+			[
+				new RegExp(`\\<(?<name>[^\\>]+)(?<!\\))>`),
+				(_, match) => {
+					const name = match.groups?.name as string;
+					return staticValues[name] || '';
+				},
+			],
+		]);
+
+		expect(result).toBe(`${staticValues.downloads}/${staticValues.basename}`);
+	});
 });
 
 describe('detokenizeSync()', () => {
