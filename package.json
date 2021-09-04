@@ -3,7 +3,7 @@
 	"version": "1.0.1",
 	"description": "Replace tokens in a string.",
 	"author": "tomasklaen",
-	"repository": "https://github.com/tomasklaen/detokeniser",
+	"repository": "https://github.com/tomasklaen/detokenizer",
 	"license": "MIT",
 	"keywords": [
 		"string",
@@ -20,7 +20,7 @@
 		"test": "prettier --check \"src/**/*.ts\" & jest",
 		"clean": "rm -rf dist",
 		"build": "npm run clean & tsc -p tsconfig.build.json",
-		"dev": "npm run clean & jest --watchAll",
+		"start": "npm run clean & jest --watchAll",
 		"prepack": "npm run build"
 	},
 	"devDependencies": {
