@@ -63,6 +63,10 @@ detokenize('\{foo\} value is {foo}', {
 // => '{foo} value is bar'
 ```
 
+### Regular expressions
+
+When using regular expressions as tokens to match against, **DO NOT** use the `g` (global) flag, or it'll break tokenizing.
+
 ## API
 
 Exports:
