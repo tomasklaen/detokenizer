@@ -17,8 +17,9 @@
 	"types": "./dist/main.d.ts",
 	"scripts": {
 		"format": "prettier --write \"src/**/*.ts\"",
+		"test": "npm-run-all test:formatting test:jest",
 		"test:formatting": "prettier --check \"src/**/*.ts\"",
-		"test": "npm-run-all test:formatting jest",
+		"test:jest": "jest",
 		"test:watch": "jest --watchAll",
 		"clean": "rm -rf dist",
 		"build": "tsc -p tsconfig.build.json",
